@@ -1,0 +1,51 @@
+*{
+    font-family: 'Chilanka';
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #230e4a;
+}
+
+.container {
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#moha {
+    align-self: center;
+    background: white;
+    width: 350px;
+    vertical-align: center;
+    horiz-align: center;
+    height: 300px;
+    cursor: ew-resize;
+    position: absolute;
+    border-radius: 15px;
+    elevation: 30deg;
+}
+
+.division {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+#welcome {
+    font-size: 35px;
+    text-decoration-width: 1px;
+    text-decoration-color: #d9f3ff;
+    color: #00857d;
+}
+
+h3 {
+    font-family: 'Chilanka';
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    color: #00857d;
+}
+
+
