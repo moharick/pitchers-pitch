@@ -1,5 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
 
-{% block content %}
-
+{% block content%}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+<div id="particles-js" class="container">
+    <div id="moha" class="division">
+        <h3 id="welcome">Welcome to Pitchers pitch<br></h3>
+        <h3>Your idea counts</h3>
+        <a class="btn btn-primary" href="#" role="button">Sign in</a>
+    </div>
+</div>
 {% endblock %}
