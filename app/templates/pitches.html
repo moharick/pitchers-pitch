@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div id="particles-js" class="container">
+        <div class="row division" id="login">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h2 class="text-center">Create Your Pitch Here!</h2>
+                {{wtf.quick_form(form)}}
+            </div>
+            <div class="col-md-2"></div>
+    </div>
+    </div>
+
+{% endblock%}

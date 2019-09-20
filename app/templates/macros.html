@@ -1,0 +1,46 @@
+{% macro display(pitch) %}
+<div class="container-fluid">
+    <div class="row">
+        {% if pitch %}
+        {% for category in pitch %}
+        <div class="col-md-6">
+            <div class="thumbnail text-center">
+                <h5 class="card-header ">{{category.title}}</h5>
+                <div class="card-body">
+                    <p>{{category.post}}</p>
+                    <p class="text-center"> Category: {{category.category}}</p>
+                    <footer class="blockquote-footer text-center"> Posted by: {{category.user.username}}</footer>
+                    <a href="{{url_for('main.new_comment',pitch_id = category.id)}}" class="btn btn-info"> Add a
+                        comment</a>
+                    <a href="{{url_for('main.upvote',pitch_id = category.id)}}" class="btn btn-info btn-sm"><i
+                            class="far fa-thumbs-up"></i>Upvote
+                        <span>{{category.upvotes.count()}}</span></a>
+                    <a href="{{url_for('main.downvote',pitch_id = category.id)}}" class="btn btn-info btn-sm"><i
+                            class="far fa-thumbs-down"></i>Downvote <span>{{category.downvotes.count()}}</span></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}
+
+{% macro display_comments(comments) %}
+<div class="container">
+</div>
+<div class="card-columns">
+    {% for comment in comments %}
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            <p>{{comment.comment}}</p>
+        </div>
+         <p class="text-center">{{comment.post.title}}</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endmacro %}

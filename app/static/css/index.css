@@ -47,5 +47,28 @@ h3 {
     text-align: center;
     color: #00857d;
 }
-
+#login {
+    align-self: center;
+    background: white;
+    width: 500px;
+    vertical-align: center;
+    horiz-align: center;
+    height: 500px;
+    cursor: ew-resize;
+    position: absolute;
+    border-radius: 15px;
+    elevation: 30deg;
+}
+#moha2{
+    align-self: center;
+    background: white;
+    width: 1000px;
+    vertical-align: center;
+    horiz-align: center;
+    height: 400px;
+    cursor: ew-resize;
+    position: absolute;
+    border-radius: 15px;
+    elevation: 30deg;
+}
 

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+{% block content %}
+<h3 style="color:black;text-align: center">Pitchers Pitch</h3>
+<div id="particles-js" class="card-columns">
+    {%for pitch in pitch %}
+    <div class="card">
+        <div id="category" class="card-header">
+            {{ pitch.category }}
+        </div>
+        <div id="title" class="card-body">
+            {{ pitch.title }}
+        </div>
+        <div id="description">
+            {{ pitch.description }}
+        </div>
+        <div class="card-footer foot_flex d-block mx-auto">
+            <a href="/comment/{{pitch.id}}"><button class="btn btn-info">Comment</button></a>
+            <a href="{{url_for('main.like',id = pitch.id)}}"><button class="btn btn-success">Like {{pitch.upvotes.count()}} </button></a>
+            <h1>{{pitch_upvotes}}</h1>
+            <a href="{{url_for('main.downvote',id = pitch.id)}}"><button class="btn btn-danger">Dislike {{pitch.downvotes.count()}}
+                    </button></a>
+            <h4></h4>
+        </div>
+
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}
