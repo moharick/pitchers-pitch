@@ -12,7 +12,7 @@ class Config:
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     SUBJECT_PREFIX = 'PITCHERS'
     SENDER_EMAIL = 'moharick@gmail.com'
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:zuhura18@localhost/pitches'
+    # SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:zuhura18@localhost/pitches'
 
 
 
@@ -25,7 +25,7 @@ class ProdConfig(Config):
         Config: The parent configuration class with General configuration settings
     '''
     # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:zuhura18@localhost/pitches'
+    SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URL')
 
 class TestConfig(Config):
     '''
